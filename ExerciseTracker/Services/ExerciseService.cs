@@ -51,6 +51,16 @@ internal class ExerciseService
         }
     }
 
+    internal static void GetRun()
+    {
+        var container = RunApplication();
+        using (AsyncScopedLifestyle.BeginScope(container))
+        {
+            var runningController = container.GetInstance<RunningController>();
+            runningController.GetRunById();
+        }
+    }
+
     internal static void AddRun()
     {
         var container = RunApplication();
@@ -58,6 +68,16 @@ internal class ExerciseService
         {
             var runningController = container.GetInstance<RunningController>();
             runningController.AddRun();
+        }
+    }
+
+    internal static void UpdateRun()
+    {
+        var container = RunApplication();
+        using (AsyncScopedLifestyle.BeginScope(container))
+        {
+            var runningController = container.GetInstance<RunningController>();
+            runningController.UpdateRun();
         }
     }
 }

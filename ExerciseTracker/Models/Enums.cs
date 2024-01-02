@@ -5,6 +5,7 @@ internal class Enums
     internal enum MenuOptions
     {
         ViewRuns,
+        ViewRun,
         AddRun,
         UpdateRun,
         DeleteRun,
