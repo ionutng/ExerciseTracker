@@ -4,5 +4,6 @@ namespace ExerciseTracker.Repositories;
 
 internal interface IRunningRepository
 {
-    ICollection<Running> GetRunnings();
+    ICollection<Running> GetRuns();
+    void AddRun(Running run);
 }

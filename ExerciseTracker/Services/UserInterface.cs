@@ -25,6 +25,9 @@ static internal class UserInterface
                 case MenuOptions.ViewRuns:
                     ExerciseService.GetRuns();
                     break;
+                case MenuOptions.AddRun:
+                    ExerciseService.AddRun();
+                    break;
                 case MenuOptions.Quit:
                     Environment.Exit(0);
                     break;

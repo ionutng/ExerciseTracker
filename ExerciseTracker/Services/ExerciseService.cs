@@ -47,7 +47,17 @@ internal class ExerciseService
         using (AsyncScopedLifestyle.BeginScope(container))
         {
             var runningController = container.GetInstance<RunningController>();
-            runningController.GetRunnings();
+            runningController.GetRuns();
+        }
+    }
+
+    internal static void AddRun()
+    {
+        var container = RunApplication();
+        using (AsyncScopedLifestyle.BeginScope(container))
+        {
+            var runningController = container.GetInstance<RunningController>();
+            runningController.AddRun();
         }
     }
 }
