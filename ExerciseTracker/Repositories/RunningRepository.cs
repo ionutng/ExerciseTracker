@@ -27,4 +27,10 @@ internal class RunningRepository(ExerciseContext context) : IRunningRepository
         _context.Running.Update(run);
         _context.SaveChanges();
     }
+
+    public void DeleteRun(Running run)
+    {
+        _context.Running.Remove(run);
+        _context.SaveChanges();
+    }
 }

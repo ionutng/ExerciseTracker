@@ -8,4 +8,5 @@ internal interface IRunningRepository
     Running GetRunById(int id);
     void AddRun(Running run);
     void UpdateRun(Running run);
+    void DeleteRun(Running run);
 }

@@ -20,7 +20,7 @@ internal class RunningController(IRunningRepository runningRepository)
     {
         GetRuns();
 
-        int runId = AnsiConsole.Ask<int>("Enter the ID of the run to retrieve:");
+        int runId = AnsiConsole.Ask<int>("Enter the ID of the run:");
         var run = _runningRepository.GetRunById(runId);
 
         UserInterface.ShowRun(run);
@@ -51,7 +51,7 @@ internal class RunningController(IRunningRepository runningRepository)
     {
         GetRuns();
         
-        int runId = AnsiConsole.Ask<int>("Enter the ID of the run to retrieve:");
+        int runId = AnsiConsole.Ask<int>("Enter the ID of the run:");
 
         var run = _runningRepository.GetRunById(runId);
 
@@ -80,5 +80,16 @@ internal class RunningController(IRunningRepository runningRepository)
             : run.Comments;
 
         _runningRepository.UpdateRun(run);
+    }
+
+    public void DeleteRun()
+    {
+        GetRuns();
+
+        int runId = AnsiConsole.Ask<int>("Enter the ID of the run:");
+
+        var run = _runningRepository.GetRunById(runId);
+
+        _runningRepository.DeleteRun(run);
     }
 }

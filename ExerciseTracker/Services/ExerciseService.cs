@@ -80,4 +80,14 @@ internal class ExerciseService
             runningController.UpdateRun();
         }
     }
+
+    internal static void DeleteRun()
+    {
+        var container = RunApplication();
+        using (AsyncScopedLifestyle.BeginScope(container))
+        {
+            var runningController = container.GetInstance<RunningController>();
+            runningController.DeleteRun();
+        }
+    }
 }

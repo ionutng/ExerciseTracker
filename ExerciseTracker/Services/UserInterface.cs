@@ -37,6 +37,9 @@ static internal class UserInterface
                 case MenuOptions.UpdateRun:
                     ExerciseService.UpdateRun();
                     break;
+                case MenuOptions.DeleteRun:
+                    ExerciseService.DeleteRun();
+                    break;
                 case MenuOptions.Quit:
                     Environment.Exit(0);
                     break;
