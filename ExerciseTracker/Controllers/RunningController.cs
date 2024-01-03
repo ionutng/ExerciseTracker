@@ -20,6 +20,13 @@ internal class RunningController(IRunningRepository runningRepository)
 
         var runId = UserInterface.GetRunId();
 
+        var runs = _runningRepository.GetRuns();
+
+        if (!runs.Any(r => r.RunningId == runId))
+        {
+            UserInterface.Menu();
+        }
+
         var run = _runningRepository.GetRunById(runId);
 
         UserInterface.ShowRun(run);
@@ -38,6 +45,13 @@ internal class RunningController(IRunningRepository runningRepository)
 
         var runId = UserInterface.GetRunId();
 
+        var runs = _runningRepository.GetRuns();
+
+        if (!runs.Any(r => r.RunningId == runId))
+        {
+            UserInterface.Menu();
+        }
+
         var run = _runningRepository.GetRunById(runId);
 
         UserInterface.UpdateRunInfoInput(run);
@@ -50,6 +64,13 @@ internal class RunningController(IRunningRepository runningRepository)
         GetRuns();
 
         var runId = UserInterface.GetRunId();
+
+        var runs = _runningRepository.GetRuns();
+
+        if (!runs.Any(r => r.RunningId == runId))
+        {
+            UserInterface.Menu();
+        }
 
         var run = _runningRepository.GetRunById(runId);
 

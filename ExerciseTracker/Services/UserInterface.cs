@@ -124,11 +124,35 @@ static internal class UserInterface
     static internal Running AskRunInfoInput()
     {
         var run = new Running();
+        DateOnly startDate, endDate;
+        TimeOnly startTime, endTime;
 
-        var startDate = AnsiConsole.Ask<DateOnly>("Date start (Format: MM-dd-yyyy):");
-        var endDate = AnsiConsole.Ask<DateOnly>("Date end (Format: MM-dd-yyyy):");
-        var startTime = AnsiConsole.Ask<TimeOnly>("Time start (Format: HH:mm:ss):");
-        var endTime = AnsiConsole.Ask<TimeOnly>("Time end (Format: HH:mm:ss):");
+        do
+        {
+            startDate = AnsiConsole.Ask<DateOnly>("Date start (Format: MM-dd-yyyy):");
+        } while (!Validation.IsDateValid(startDate));
+
+        do
+        {
+            endDate = AnsiConsole.Ask<DateOnly>("Date end (Format: MM-dd-yyyy):");
+        } while (!Validation.IsDateValid(endDate));
+
+        do
+        {
+            startTime = AnsiConsole.Ask<TimeOnly>("Time start (Format: HH:mm:ss):");
+        } while (!Validation.IsTimeValid(startTime, startDate));
+
+        do
+        {
+            endTime = AnsiConsole.Ask<TimeOnly>("Time end (Format: HH:mm:ss):");
+        } while (!Validation.IsTimeValid(endTime, endDate));
+
+        if (!Validation.AreTimesValid(startTime, endTime, startDate, endDate))
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid time!\n");
+            Menu();
+        }
 
         run.DateStart = new DateTime(startDate, startTime);
         run.DateEnd = new DateTime(endDate, endTime);
