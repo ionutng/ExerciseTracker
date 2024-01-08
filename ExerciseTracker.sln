@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseTracker", "ExerciseTracker\ExerciseTracker.csproj", "{EC5F625F-554E-4BD1-822F-1D232DC0F90A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExerciseTracker", "ExerciseTracker\ExerciseTracker.csproj", "{EC5F625F-554E-4BD1-822F-1D232DC0F90A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExerciseTracker.UnitTests", "ExerciseTracker.UnitTests\ExerciseTracker.UnitTests.csproj", "{174263FB-2635-4981-A169-3C8B90D3B000}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{EC5F625F-554E-4BD1-822F-1D232DC0F90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC5F625F-554E-4BD1-822F-1D232DC0F90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC5F625F-554E-4BD1-822F-1D232DC0F90A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{174263FB-2635-4981-A169-3C8B90D3B000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{174263FB-2635-4981-A169-3C8B90D3B000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{174263FB-2635-4981-A169-3C8B90D3B000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{174263FB-2635-4981-A169-3C8B90D3B000}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

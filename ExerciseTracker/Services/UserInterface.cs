@@ -137,6 +137,13 @@ static internal class UserInterface
             endDate = AnsiConsole.Ask<DateOnly>("Date end (Format: MM-dd-yyyy):");
         } while (!Validation.IsDateValid(endDate));
 
+        if (!Validation.AreDatesValid(startDate, endDate))
+        {
+            Console.Clear();
+            Console.WriteLine("Invalid dates!\n");
+            Menu();
+        }
+
         do
         {
             startTime = AnsiConsole.Ask<TimeOnly>("Time start (Format: HH:mm:ss):");
